@@ -1,0 +1,31 @@
+[build]
+  command   = "pnpm build"
+  publish   = ".next"
+
+# @netlify/plugin-nextjs handles SSR routes, API routes, and image optimisation.
+# Install it once with: pnpm add -D @netlify/plugin-nextjs
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# ---------------------------------------------------------------------------
+# Environment variable stubs
+# Set real values in: Netlify UI → Site configuration → Environment variables
+# ---------------------------------------------------------------------------
+# RESEND_API_KEY          — Resend API key; enables contact form email delivery
+# RESEND_FROM_EMAIL       — Verified sender address (default: noreply@oconnorcars.ie)
+# CONTACT_RECIPIENT_EMAIL — Delivery inbox for contact submissions (default: info@oconnorcars.ie)
+
+[build.environment]
+  NODE_VERSION = "22"
+  PNPM_VERSION = "9"
+
+# ---------------------------------------------------------------------------
+# Headers
+# ---------------------------------------------------------------------------
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options        = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy        = "strict-origin-when-cross-origin"
+    Permissions-Policy     = "camera=(), microphone=(), geolocation=()"
