@@ -5,6 +5,16 @@
 **Hosting:** Netlify (account: `nolan595`)  
 **Last updated:** 2026-05-08
 
+## Live deployment
+
+| | |
+|---|---|
+| **Live URL** | https://oconnor-cars.netlify.app |
+| **GitHub repo** | https://github.com/nolan595/oconnor-cars |
+| **Netlify site name** | oconnor-cars |
+| **Netlify account** | nolan595 |
+| **Auto-deploy** | Every push to `main` triggers a new deploy automatically |
+
 ---
 
 ## Prerequisites
